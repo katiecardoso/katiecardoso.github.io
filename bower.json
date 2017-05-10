@@ -1,0 +1,26 @@
+{
+  "name": "katie-benoit",
+  "description": "editor, writer, creative consultant",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "resources/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "2.2.4",
+    "bootstrap": "3.3.6",
+    "bootstrap-sass": "3.3.6",
+    "font-awesome": "4.6.3",
+    "angular": "1.6.1",
+    "angular-ui-router": "1.0.0-rc.1",
+    "angular-bootstrap": "2.5.0",
+    "angular-loading-bar": "0.9.0"
+  }
+}
