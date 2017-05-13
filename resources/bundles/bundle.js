@@ -61955,6 +61955,22 @@ jQuery.easing["jswing"]=jQuery.easing["swing"];jQuery.extend(jQuery.easing,{def:
 ( function( $ ) {
     'use strict';
 
+    // Setup background image transitions
+    var backgroundImageIndex = 1;
+    var backgroundImages = [ './resources/images/blue-green_mountain-2287731_1920.jpg',
+            './resources/images/green_landscape-403165_1920.jpg',
+            './resources/images/green-blue_tree-247122_1280.jpg',
+            './resources/images/blue-orange_sunset-229335_1920.jpg' ];
+
+    setInterval( function() {
+        $( 'header' ).css( 'backgroundImage', 'url(' + backgroundImages[backgroundImageIndex++] + ')' );
+
+        if ( backgroundImageIndex == backgroundImages.length ) {
+            backgroundImageIndex = 0;
+        }
+    }, 10000 );
+
+
     // jQuery for page scrolling feature - requires jQuery Easing plugin
     $( document ).on( 'click', 'a.page-scroll', function( event ) {
         var $anchor = $( this );
@@ -62072,7 +62088,7 @@ jQuery.easing["jswing"]=jQuery.easing["swing"];jQuery.extend(jQuery.easing,{def:
 ( function() {
     'use strict';
 
-    function NavbarController() {
+    function NavbarController($filter) {
         var vm = this;
 
         vm.$onInit = function() {
@@ -62082,7 +62098,7 @@ jQuery.easing["jswing"]=jQuery.easing["swing"];jQuery.extend(jQuery.easing,{def:
 
     angular.module( 'components' )
 
-    .controller( 'NavbarController', [ NavbarController ] );
+    .controller( 'NavbarController', [ '$filter', NavbarController ] );
 } )();
 (function(){angular.module('templates', []).run(['$templateCache', function($templateCache) {$templateCache.put('root.html','<navbar></navbar>\n\n\n<header>\n\n  <div class="header-content">\n\n    <div class="header-content-inner">\n\n      <h1>\n        Katie Benoit <span class="text-muted">| Editing * Writing * Creative Consulting</span>\n      </h1>\n\n      <a\n        href="#about-me"\n        class="btn btn-primary btn-xl page-scroll">Meet me</a>\n\n    </div>\n\n  </div>\n\n</header>\n\n\n\n<section\n  id="about-me"\n  class="bg-primary">\n\n  <div class="container">\n\n    <div class="row">\n\n      <div class="col-lg-8 col-lg-offset-2 text-center">\n\n        <h2 class="section-heading">About me</h2>\n\n        <hr class="light" />\n\n        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n\n        <a\n          href="#resume"\n          class="page-scroll btn btn-default btn-xl sr-button">Learn more</a>\n\n      </div>\n\n    </div>\n\n  </div>\n\n</section>\n\n\n\n<section id="resume">\n\n  <div class="container">\n\n    <div class="row">\n\n      <div class="col-lg-8 col-lg-offset-2 text-center">\n\n        <h2 class="section-heading">Resume</h2>\n\n        <hr class="light" />\n\n        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n\n        <a\n          href="#my-books"\n          class="page-scroll btn btn-default btn-xl sr-button">My work</a>\n\n      </div>\n\n    </div>\n\n  </div>\n\n</section>\n\n\n\n<section id="my-books">\n\n  <div class="container">\n\n    <div class="row">\n\n      <div class="col-lg-8 col-lg-offset-2 text-center">\n\n        <h2 class="section-heading">My books</h2>\n\n        <hr class="light" />\n\n        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n\n        <a\n          href="#contact-me"\n          class="page-scroll btn btn-default btn-xl sr-button">Reach out</a>\n\n      </div>\n\n    </div>\n\n  </div>\n\n</section>\n\n\n\n<section id="contact-me">\n\n  <div class="container">\n\n    <div class="row">\n\n      <div class="col-lg-8 col-lg-offset-2 text-center">\n\n        <h2 class="section-heading">Contact me</h2>\n\n        <hr class="light" />\n\n        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n\n      </div>\n\n    </div>\n\n  </div>\n\n</section>\n\n<footer>\n  <p class="pull-right">\n    <a\n      class="page-scroll"\n      href="#page-top">Back to top</a>\n  </p>\n  <p>&copy; 2017 Katie Benoit LLC</p>\n</footer>');
 $templateCache.put('./navbar.html','<nav\n  id="main-nav"\n  class="navbar navbar-default navbar-fixed-top">\n\n  <div class="container-fluid">\n\n    <div class="navbar-header">\n\n      <button\n        type="button"\n        class="navbar-toggle collapsed"\n        data-toggle="collapse"\n        data-target="#kb-navbar-collapse">\n        <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>\n      </button>\n\n      <a\n        class="navbar-brand page-scroll"\n        href="#page-top">Katie Benoit</a>\n\n    </div>\n\n    <div\n      id="kb-navbar-collapse"\n      class="collapse navbar-collapse">\n\n      <ul class="nav navbar-nav navbar-right">\n\n        <li><a\n          class="page-scroll"\n          href="#about-me">About me</a></li>\n\n        <li><a\n          class="page-scroll"\n          href="#resume">Resume</a></li>\n\n        <li><a\n          class="page-scroll"\n          href="#my-books">My books</a></li>\n\n        <li><a\n          class="page-scroll"\n          href="#contact-me">Contact me</a></li>\n\n      </ul>\n\n    </div>\n\n  </div>\n\n</nav>');}]);})();

@@ -1,6 +1,22 @@
 ( function( $ ) {
     'use strict';
 
+    // Setup background image transitions
+    var backgroundImageIndex = 1;
+    var backgroundImages = [ './resources/images/blue-green_mountain-2287731_1920.jpg',
+            './resources/images/green_landscape-403165_1920.jpg',
+            './resources/images/green-blue_tree-247122_1280.jpg',
+            './resources/images/blue-orange_sunset-229335_1920.jpg' ];
+
+    setInterval( function() {
+        $( 'header' ).css( 'backgroundImage', 'url(' + backgroundImages[backgroundImageIndex++] + ')' );
+
+        if ( backgroundImageIndex == backgroundImages.length ) {
+            backgroundImageIndex = 0;
+        }
+    }, 10000 );
+
+
     // jQuery for page scrolling feature - requires jQuery Easing plugin
     $( document ).on( 'click', 'a.page-scroll', function( event ) {
         var $anchor = $( this );

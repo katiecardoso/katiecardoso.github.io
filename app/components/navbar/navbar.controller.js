@@ -1,7 +1,7 @@
 ( function() {
     'use strict';
 
-    function NavbarController() {
+    function NavbarController($filter) {
         var vm = this;
 
         vm.$onInit = function() {
@@ -11,5 +11,5 @@
 
     angular.module( 'components' )
 
-    .controller( 'NavbarController', [ NavbarController ] );
+    .controller( 'NavbarController', [ '$filter', NavbarController ] );
 } )();
