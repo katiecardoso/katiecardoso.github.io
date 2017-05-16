@@ -14315,6 +14315,7 @@ header {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+  background-color: #87a5a3;
   background-image: url("../images/dock.jpg");
   background-position: center;
   text-align: center;
