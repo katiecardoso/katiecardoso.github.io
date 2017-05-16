@@ -14315,8 +14315,8 @@ header {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+  background-image: url("../images/dock.jpg");
   background-position: center;
-  background-image: url("../images/blue-green_mountain-2287731_1920.jpg");
   text-align: center;
   color: white; }
   header .header-content {

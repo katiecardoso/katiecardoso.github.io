@@ -3,18 +3,23 @@
 
     // Setup background image transitions
     var backgroundImageIndex = 1;
-    var backgroundImages = [ './resources/images/blue-green_mountain-2287731_1920.jpg',
-            './resources/images/green_landscape-403165_1920.jpg',
-            './resources/images/green-blue_tree-247122_1280.jpg',
-            './resources/images/blue-orange_sunset-229335_1920.jpg' ];
+    var backgroundImages = [ './resources/images/dock.jpg', './resources/images/sunflowers.jpg', './resources/images/beach.jpg', './resources/images/pasture.jpg' ];
 
     setInterval( function() {
+        // setBackground( backgroundImages[backgroundImageIndex++] );
         $( 'header' ).css( 'backgroundImage', 'url(' + backgroundImages[backgroundImageIndex++] + ')' );
 
         if ( backgroundImageIndex == backgroundImages.length ) {
             backgroundImageIndex = 0;
         }
     }, 10000 );
+
+    window.onload = function() {
+        for ( var i = 1; i < backgroundImages.length; i++ ) {
+            var img = new Image();
+            img.src = backgroundImages[i];
+        }
+    };
 
 
     // jQuery for page scrolling feature - requires jQuery Easing plugin
@@ -77,4 +82,9 @@
                 tError : '<a href="%url%">The image #%curr%</a> could not be loaded.'
             }
     } );
+
+    function setBackground( backgroundImage ) {
+        $( 'header' ).css( 'backgroundImage', 'url(' + backgroundImage + ')' );
+    }
+    ;
 } )( jQuery );
