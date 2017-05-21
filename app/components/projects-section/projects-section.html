@@ -1,0 +1,39 @@
+<section id="projects">
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-lg-8 col-lg-offset-2 text-center">
+
+        <h2 class="section-heading">My books</h2>
+
+        <hr class="light" />
+
+      </div>
+
+    </div>
+
+    <div
+      class="row"
+      ng-repeat="project in $ctrl.projects">
+
+      <book-card book="project"></book-card>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-lg-8 col-lg-offset-2 text-center">
+
+        <a
+          href="#contact"
+          class="page-scroll btn btn-tertiary btn-xl sr-button">Reach out</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

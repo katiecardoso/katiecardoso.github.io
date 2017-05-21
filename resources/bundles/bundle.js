@@ -62086,6 +62086,114 @@ jQuery.easing["jswing"]=jQuery.easing["swing"];jQuery.extend(jQuery.easing,{def:
 ( function() {
     'use strict';
 
+    var aboutSection = {
+            templateUrl : './about-section.html',
+            controller : 'AboutSectionController'
+    };
+
+    angular.module( 'components' )
+
+    .component( 'aboutSection', aboutSection );
+} )();
+( function() {
+    'use strict';
+
+    function AboutSectionController() {
+        var vm = this;
+
+        vm.$onInit = function() {
+        }
+    }
+
+    angular.module( 'components' )
+
+    .controller( 'AboutSectionController', [ AboutSectionController ] );
+} )();
+( function() {
+    'use strict';
+
+    var bookCard = {
+            templateUrl : './book-card.html',
+            controller : 'BookCardController',
+            bindings : {
+                book : '<'
+            }
+    };
+
+    angular.module( 'components' )
+
+    .component( 'bookCard', bookCard );
+} )();
+( function() {
+    'use strict';
+
+    function BookCardController( $filter ) {
+        var vm = this;
+
+        vm.$onInit = function() {
+            console.log( 'received book: ' + angular.toJson( vm.book ) );
+        }
+    }
+
+    angular.module( 'components' )
+
+    .controller( 'BookCardController', [ '$filter', BookCardController ] );
+} )();
+( function() {
+    'use strict';
+
+    var contactSection = {
+            templateUrl : './contact-section.html',
+            controller : 'ContactsSectionController'
+    };
+
+    angular.module( 'components' )
+
+    .component( 'contactSection', contactSection );
+} )();
+( function() {
+    'use strict';
+
+    function ContactsSectionController() {
+        var vm = this;
+
+        vm.$onInit = function() {
+        }
+    }
+
+    angular.module( 'components' )
+
+    .controller( 'ContactsSectionController', [ ContactsSectionController ] );
+} )();
+( function() {
+    'use strict';
+
+    var footbar = {
+            templateUrl : './footbar.html',
+            controller : 'FootbarController'
+    };
+
+    angular.module( 'components' )
+
+    .component( 'footbar', footbar );
+} )();
+( function() {
+    'use strict';
+
+    function FootbarController($filter) {
+        var vm = this;
+
+        vm.$onInit = function() {
+        }
+    }
+
+    angular.module( 'components' )
+
+    .controller( 'FootbarController', [ '$filter', FootbarController ] );
+} )();
+( function() {
+    'use strict';
+
     var navbar = {
             templateUrl : './navbar.html',
             controller : 'NavbarController'
@@ -62110,6 +62218,104 @@ jQuery.easing["jswing"]=jQuery.easing["swing"];jQuery.extend(jQuery.easing,{def:
 
     .controller( 'NavbarController', [ '$filter', NavbarController ] );
 } )();
-(function(){angular.module('templates', []).run(['$templateCache', function($templateCache) {$templateCache.put('root.html','<navbar></navbar>\n\n\n<header>\n\n  <div class="header-content">\n\n    <div class="header-content-inner">\n\n      <h1>\n        Katie Benoit <span class="text-muted">| Editing * Writing * Creative Consulting</span>\n      </h1>\n\n      <a\n        href="#about-me"\n        class="btn btn-primary btn-xl page-scroll">Meet me</a>\n\n    </div>\n\n  </div>\n\n</header>\n\n\n\n<section\n  id="about-me"\n  class="bg-primary">\n\n  <div class="container">\n\n    <div class="row">\n\n      <div class="col-lg-8 col-lg-offset-2 text-center">\n\n        <h2 class="section-heading">About me</h2>\n\n        <hr class="light" />\n\n        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n\n        <a\n          href="#resume"\n          class="page-scroll btn btn-default btn-xl sr-button">Learn more</a>\n\n      </div>\n\n    </div>\n\n  </div>\n\n</section>\n\n\n\n<section id="resume">\n\n  <div class="container">\n\n    <div class="row">\n\n      <div class="col-lg-8 col-lg-offset-2 text-center">\n\n        <h2 class="section-heading">Resume</h2>\n\n        <hr class="light" />\n\n        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n\n        <a\n          href="#my-books"\n          class="page-scroll btn btn-default btn-xl sr-button">My work</a>\n\n      </div>\n\n    </div>\n\n  </div>\n\n</section>\n\n\n\n<section id="my-books">\n\n  <div class="container">\n\n    <div class="row">\n\n      <div class="col-lg-8 col-lg-offset-2 text-center">\n\n        <h2 class="section-heading">My books</h2>\n\n        <hr class="light" />\n\n        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n\n        <a\n          href="#contact-me"\n          class="page-scroll btn btn-default btn-xl sr-button">Reach out</a>\n\n      </div>\n\n    </div>\n\n  </div>\n\n</section>\n\n\n\n<section id="contact-me">\n\n  <div class="container">\n\n    <div class="row">\n\n      <div class="col-lg-8 col-lg-offset-2 text-center">\n\n        <h2 class="section-heading">Contact me</h2>\n\n        <hr class="light" />\n\n        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n\n      </div>\n\n    </div>\n\n  </div>\n\n</section>\n\n<footer>\n  <p class="pull-right">\n    <a\n      class="page-scroll"\n      href="#page-top">Back to top</a>\n  </p>\n  <p>&copy; 2017 Katie Benoit LLC</p>\n</footer>');
-$templateCache.put('./navbar.html','<nav\n  id="main-nav"\n  class="navbar navbar-default navbar-fixed-top">\n\n  <div class="container-fluid">\n\n    <div class="navbar-header">\n\n      <button\n        type="button"\n        class="navbar-toggle collapsed"\n        data-toggle="collapse"\n        data-target="#kb-navbar-collapse">\n        <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>\n      </button>\n\n      <a\n        class="navbar-brand page-scroll"\n        href="#page-top">Katie Benoit</a>\n\n    </div>\n\n    <div\n      id="kb-navbar-collapse"\n      class="collapse navbar-collapse">\n\n      <ul class="nav navbar-nav navbar-right">\n\n        <li><a\n          class="page-scroll"\n          href="#about-me">About me</a></li>\n\n        <li><a\n          class="page-scroll"\n          href="#resume">Resume</a></li>\n\n        <li><a\n          class="page-scroll"\n          href="#my-books">My books</a></li>\n\n        <li><a\n          class="page-scroll"\n          href="#contact-me">Contact me</a></li>\n\n      </ul>\n\n    </div>\n\n  </div>\n\n</nav>');}]);})();
+( function() {
+    'use strict';
+
+    var projectsSection = {
+            templateUrl : './projects-section.html',
+            controller : 'ProjectsSectionController'
+    };
+
+    angular.module( 'components' )
+
+    .component( 'projectsSection', projectsSection );
+} )();
+( function() {
+    'use strict';
+
+    function ProjectsSectionController() {
+        var vm = this;
+
+        vm.$onInit = function() {
+            vm.projects = [ {
+                    title : "Sample Title One",
+                    blurb : "This is the sample blurb for the first book.",
+                    thumbnail : "http://placecorgi.com/250"
+            }, {
+                    title : "Sample Title Two",
+                    blurb : "This is the sample blurb for the second book.",
+                    thumbnail : "http://placecorgi.com/250"
+            }, {
+                    title : "Sample Title Three",
+                    blurb : "This is the sample blurb for the third book.",
+                    thumbnail : "http://placecorgi.com/250"
+            } ];
+        }
+    }
+
+    angular.module( 'components' )
+
+    .controller( 'ProjectsSectionController', [ ProjectsSectionController ] );
+} )();
+( function() {
+    'use strict';
+
+    var servicesSection = {
+            templateUrl : './services-section.html',
+            controller : 'ServicesSectionController'
+    };
+
+    angular.module( 'components' )
+
+    .component( 'servicesSection', servicesSection );
+} )();
+( function() {
+    'use strict';
+
+    function ServicesSectionController() {
+        var vm = this;
+
+        vm.$onInit = function() {
+        }
+    }
+
+    angular.module( 'components' )
+
+    .controller( 'ServicesSectionController', [ ServicesSectionController ] );
+} )();
+( function() {
+    'use strict';
+
+    var splashSection = {
+            templateUrl : './splash-section.html',
+            controller : 'SplashSectionController'
+    };
+
+    angular.module( 'components' )
+
+    .component( 'splashSection', splashSection );
+} )();
+( function() {
+    'use strict';
+
+    function SplashSectionController() {
+        var vm = this;
+
+        vm.$onInit = function() {
+        }
+    }
+
+    angular.module( 'components' )
+
+    .controller( 'SplashSectionController', [ SplashSectionController ] );
+} )();
+(function(){angular.module('templates', []).run(['$templateCache', function($templateCache) {$templateCache.put('root.html','<navbar></navbar>\n\n<splash-section></splash-section>\n\n<about-section></about-section>\n\n<services-section></services-section>\n\n<projects-section></projects-section>\n\n<contact-section></contact-section>\n\n<footbar></footbar>');
+$templateCache.put('./about-section.html','<section\n  id="about"\n  class="bg-primary">\n\n  <div class="container">\n\n    <div class="row">\n\n      <div class="col-lg-8 col-lg-offset-2 text-center">\n\n        <h2 class="section-heading">About Me</h2>\n\n        <hr class="light" />\n\n        <p>I\u2019ve worked in the publishing industry for over a decade as a nonfiction book acquisitions editor. I have acquired and edited books across a variety of categories, including outdoor recreation, home improvement and design,\n          cookbooks, adventure narratives, and family-focused titles. I specialize in highly designed, instructional books. My edited works include two National Outdoor Book Award winners and a New York Times e-book bestseller.</p>\n\n        <a\n          href="#services"\n          class="page-scroll btn btn-tertiary btn-xl sr-button">Learn more</a>\n\n      </div>\n\n    </div>\n\n  </div>\n\n</section>');
+$templateCache.put('./book-card.html','<div class="col-lg-10 col-lg-offset-1">\n\n  <div class="row">\n\n    <div class="col-md-4">\n\n      <img ng-src="{{$ctrl.book.thumbnail}}" />\n\n    </div>\n\n    <div class="col-md-8">\n\n      <div class="panel panel-primary">\n\n        <div class="panel-heading">\n\n          <h3 class="panel-title">{{$ctrl.book.title}}</h3>\n\n        </div>\n\n        <div class="panel-body">{{$ctrl.book.blurb}}</div>\n\n      </div>\n\n    </div>\n\n  </div>\n\n  <hr class="sub-section" />\n\n</div>');
+$templateCache.put('./contact-section.html','<section id="contact">\n\n  <div class="container">\n\n    <div class="row">\n\n      <div class="col-lg-8 col-lg-offset-2 text-center">\n\n        <h2 class="section-heading">Contact</h2>\n\n        <hr class="light" />\n\n        <a\n          href="mailto:katie@katiebenoit.com"\n          class="btn btn-primary btn-xl">Email me</a>\n\n        <hr style="border-color: white" />\n\n        <div class="well">\n          <p class="text-muted">\n            To have an e-mail form like Stacy Tornio\'s, it will take a bit of time to set up. In the meantime, I\'m simply letting this button leverage the user\'s default e-mail application to pre-fill an e-mail ready to send to <a\n              href="#"\n              onClick="return false;">katie@katiebenoit.com</a>\n          </p>\n        </div>\n\n      </div>\n\n    </div>\n\n  </div>\n\n</section>');
+$templateCache.put('./footbar.html','<footer>\n  <p class="pull-right">\n    <a\n      class="page-scroll"\n      href="#page-top">Back to top</a>\n  </p>\n  <p>&copy; 2017 Katie Benoit LLC</p>\n</footer>');
+$templateCache.put('./navbar.html','<nav\n  id="main-nav"\n  class="navbar navbar-default navbar-fixed-top">\n\n  <div class="container-fluid">\n\n    <div class="navbar-header">\n\n      <button\n        type="button"\n        class="navbar-toggle collapsed"\n        data-toggle="collapse"\n        data-target="#kb-navbar-collapse">\n        <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>\n      </button>\n\n      <a\n        class="navbar-brand page-scroll"\n        href="#page-top">Katie Benoit</a>\n\n    </div>\n\n    <div\n      id="kb-navbar-collapse"\n      class="collapse navbar-collapse">\n\n      <ul class="nav navbar-nav navbar-right">\n\n        <li><a\n          class="page-scroll"\n          href="#about">About Me</a></li>\n\n        <li><a\n          class="page-scroll"\n          href="#resume">Services</a></li>\n\n        <li><a\n          class="page-scroll"\n          href="#projects">My Sample Projects</a></li>\n\n        <li><a\n          class="page-scroll"\n          href="#contact">Contact</a></li>\n\n      </ul>\n\n    </div>\n\n  </div>\n\n</nav>');
+$templateCache.put('./projects-section.html','<section id="projects">\n\n  <div class="container">\n\n    <div class="row">\n\n      <div class="col-lg-8 col-lg-offset-2 text-center">\n\n        <h2 class="section-heading">My books</h2>\n\n        <hr class="light" />\n\n      </div>\n\n    </div>\n\n    <div\n      class="row"\n      ng-repeat="project in $ctrl.projects">\n\n      <book-card book="project"></book-card>\n\n    </div>\n\n    <div class="row">\n\n      <div class="col-lg-8 col-lg-offset-2 text-center">\n\n        <a\n          href="#contact"\n          class="page-scroll btn btn-tertiary btn-xl sr-button">Reach out</a>\n\n      </div>\n\n    </div>\n\n  </div>\n\n</section>');
+$templateCache.put('./services-section.html','<section id="services">\n\n  <div class="container">\n\n    <div class="row">\n\n      <div class="col-lg-8 col-lg-offset-2 text-center">\n\n        <h2 class="section-heading">Services</h2>\n\n        <hr class="light" />\n\n        <p>I believe the writing and editing process should be fun, yet meaningful. Your work is your passion and expertise, and I want to help you produce the best finished product possible. I\u2019m here to help guide you along through the\n          process of creating, whether it\u2019s brainstorming a concept with you, or to put the finishing touches on the project.</p>\n\n        <hr class="sub-section" />\n\n      </div>\n\n    </div>\n\n    <div class="row">\n\n      <div class="col-lg-8 col-lg-offset-2">\n\n        <p>The services I offer include:</p>\n\n        <ul>\n          <li>Copyediting/proofreading</li>\n          <li>Creative brainstorming/content creation</li>\n          <li>Developmental editing</li>\n          <li>Line editing</li>\n          <li>Project management</li>\n          <li>Proposal writing/editing</li>\n        </ul>\n\n        <hr class="sub-section" />\n\n      </div>\n\n    </div>\n\n    <div class="row">\n\n      <div class="col-lg-8 col-lg-offset-2 text-center">\n\n        <p>\n          For a no-cost consultation about your needs and project goals, or to receive a quote, contact me at <a\n            href="#"\n            onClick="return false;">LINK</a>.\n        </p>\n\n        <a\n          href="#projects"\n          class="page-scroll btn btn-tertiary btn-xl sr-button">My work</a>\n\n      </div>\n\n    </div>\n\n  </div>\n\n</section>');
+$templateCache.put('./splash-section.html','<header>\n\n  <div class="header-content">\n\n    <div class="header-content-inner">\n\n      <h1>\n        Katie Benoit\n      </h1>\n      \n      <p>Editor | Writer | Creative Consultant</p>\n      \n      <hr/>\n\n      <a\n        href="#about"\n        class="btn btn-secondary btn-xl page-scroll">Meet me</a>\n\n    </div>\n\n  </div>\n\n</header>');}]);})();
 //# sourceMappingURL=../maps/bundle.js.map

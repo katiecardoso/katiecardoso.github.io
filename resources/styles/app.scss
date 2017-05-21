@@ -13,7 +13,14 @@ hr {
 }
 
 hr.light {
-    border-color: white;
+    border-color: $theme-tertiary;
+    border-width: 1px;
+}
+
+hr.sub-section {
+    border-color: $theme-tertiary;
+    border-width: 1px;
+    max-width: 100%;
 }
 
 a {
@@ -33,7 +40,9 @@ p {
 }
 
 .bg-primary {
-    background-color: $theme-primary;
+    background-color: $theme-secondary;
+    /* background-color: rgba(116,244,88,0.25); */
+    /* color: #646464; */
 }
 
 .bg-dark {
@@ -148,7 +157,7 @@ header {
     background-image: url('../images/dock.jpg');
     background-position: center;
     text-align: center;
-    color: white;
+    color: $theme-primary;
     .header-content {
         position: relative;
         text-align: center;
@@ -156,20 +165,22 @@ header {
         width: 100%;
         .header-content-inner {
             h1 {
-                font-weight: 700;
+                font-weight: 900;
                 text-transform: uppercase;
                 margin-top: 0;
                 margin-bottom: 0;
-                font-size: 30px;
+                font-size: 48px;
             }
             hr {
+                border-color: #646464;
+                border-width: 3px;
+                max-width: 200px;
                 margin: 30px auto;
             }
             p {
-                font-weight: 300;
-                color: fade(white, 70%);
-                font-size: 16px;
-                margin-bottom: 50px;
+                font-weight: 600;
+                color: fade($theme-primary, 70%);
+                font-size: 24px;
             }
         }
     }
@@ -298,11 +309,29 @@ header {
     @include button-variant(white,$theme-primary,$theme-primary);
 }
 
+.btn-secondary {
+    @include button-variant(white,$theme-secondary,$theme-secondary);
+}
+
+.btn-tertiary {
+    @include button-variant(white,$theme-tertiary,$theme-tertiary);
+}
+
 .btn {
     border: none;
     border-radius: 300px;
     font-weight: 700;
     text-transform: uppercase;
+}
+
+// Panel Styles
+
+.panel-primary {
+    border-color: $theme-secondary;
+    .panel-heading {
+        background-color: $theme-secondary;
+        border-color: $theme-secondary;
+    }
 }
 
 .btn-xl {
