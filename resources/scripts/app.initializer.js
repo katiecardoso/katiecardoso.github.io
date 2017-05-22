@@ -61,9 +61,4 @@
                 tError : '<a href="%url%">The image #%curr%</a> could not be loaded.'
             }
     } );
-
-    function setBackground( backgroundImage ) {
-        $( 'header' ).css( 'backgroundImage', 'url(' + backgroundImage + ')' );
-    }
-    ;
 } )( jQuery );
