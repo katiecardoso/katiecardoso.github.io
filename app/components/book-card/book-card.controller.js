@@ -5,7 +5,6 @@
         var vm = this;
 
         vm.$onInit = function() {
-            console.log( 'received book: ' + angular.toJson( vm.book ) );
         }
     }
 

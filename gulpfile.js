@@ -42,11 +42,11 @@ var html = {
 
 var js = {
         src : [ appDir + '/**/*.module.js', appDir + '/**/*.js', tmpDir + '/templates.js' ],
-        lib : [ bowerDir + '/angular/angular.js',
+        lib : [ bowerDir + '/jquery/dist/jquery.js',
+                bowerDir + '/angular/angular.js',
                 bowerDir + '/angular-ui-router/release/angular-ui-router.js',
                 bowerDir + '/angular-bootstrap/ui-bootstrap-tpls.js',
                 bowerDir + '/angular-loading-bar/build/loading-bar.min.js',
-                bowerDir + '/jquery/dist/jquery.js',
                 bowerDir + '/bootstrap/dist/js/bootstrap.js',
                 bowerDir + '/jquery.easing/js/jquery.easing.min.js',
                 bowerDir + '/scrollreveal/dist/scrollreveal.min.js',

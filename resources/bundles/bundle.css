@@ -20868,6 +20868,10 @@ img::-moz-selection {
 body {
   webkit-tap-highlight-color: #222222; }
 
+.book-cover {
+  height: 420px;
+  width: 100%; }
+
 @charset "UTF-8";
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
@@ -39587,9 +39591,5 @@ img::-moz-selection {
 
 body {
   webkit-tap-highlight-color: #222222; }
-
-.book-cover {
-  height: 420px;
-  width: 100%; }
 
 /*# sourceMappingURL=../maps/bundle.css.map */
