@@ -1,27 +1,26 @@
 ( function() {
     'use strict';
 
-    function ProjectsSectionController() {
+    function ProjectsSectionController( ProjectsSectionService ) {
         var vm = this;
 
         vm.$onInit = function() {
-            vm.projects = [ {
-                    title : "Sample Title One",
-                    blurb : "This is the sample blurb for the first book.",
-                    thumbnail : "http://placecorgi.com/250"
-            }, {
-                    title : "Sample Title Two",
-                    blurb : "This is the sample blurb for the second book.",
-                    thumbnail : "http://placecorgi.com/250"
-            }, {
-                    title : "Sample Title Three",
-                    blurb : "This is the sample blurb for the third book.",
-                    thumbnail : "http://placecorgi.com/250"
-            } ];
+            vm.projects = [ ProjectsSectionService.aroundAGreekTable,
+                    ProjectsSectionService.backpackerNationalParksCoastToCoast,
+                    ProjectsSectionService.barefootHome,
+                    ProjectsSectionService.bridalBible,
+                    ProjectsSectionService.campingActivityBookForFamilies,
+                    ProjectsSectionService.diyBride,
+                    ProjectsSectionService.familiesOnFoot,
+                    ProjectsSectionService.hotDog,
+                    ProjectsSectionService.kidsOutdoorAdventureBook,
+                    ProjectsSectionService.prairieGirl,
+                    ProjectsSectionService.spoonfulOfPromises,
+                    ProjectsSectionService.wineocology ];
         }
     }
 
     angular.module( 'components' )
 
-    .controller( 'ProjectsSectionController', [ ProjectsSectionController ] );
+    .controller( 'ProjectsSectionController', [ 'ProjectsSectionService', ProjectsSectionController ] );
 } )();

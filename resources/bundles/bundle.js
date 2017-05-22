@@ -62121,32 +62121,6 @@ jQuery.easing["jswing"]=jQuery.easing["swing"];jQuery.extend(jQuery.easing,{def:
 ( function() {
     'use strict';
 
-    var footbar = {
-            templateUrl : './footbar.html',
-            controller : 'FootbarController'
-    };
-
-    angular.module( 'components' )
-
-    .component( 'footbar', footbar );
-} )();
-( function() {
-    'use strict';
-
-    function FootbarController($filter) {
-        var vm = this;
-
-        vm.$onInit = function() {
-        }
-    }
-
-    angular.module( 'components' )
-
-    .controller( 'FootbarController', [ '$filter', FootbarController ] );
-} )();
-( function() {
-    'use strict';
-
     var contactSection = {
             templateUrl : './contact-section.html',
             controller : 'ContactsSectionController'
@@ -62173,6 +62147,59 @@ jQuery.easing["jswing"]=jQuery.easing["swing"];jQuery.extend(jQuery.easing,{def:
 ( function() {
     'use strict';
 
+    var footbar = {
+            templateUrl : './footbar.html',
+            controller : 'FootbarController'
+    };
+
+    angular.module( 'components' )
+
+    .component( 'footbar', footbar );
+} )();
+( function() {
+    'use strict';
+
+    function FootbarController($filter) {
+        var vm = this;
+
+        vm.$onInit = function() {
+        }
+    }
+
+    angular.module( 'components' )
+
+    .controller( 'FootbarController', [ '$filter', FootbarController ] );
+} )();
+( function() {
+    'use strict';
+
+    var navbar = {
+            templateUrl : './navbar.html',
+            controller : 'NavbarController'
+    };
+
+    angular.module( 'components' )
+
+    .component( 'navbar', navbar );
+} )();
+( function() {
+    'use strict';
+
+    function NavbarController($filter) {
+        var vm = this;
+
+        vm.$onInit = function() {
+            console.log( 'welcome @ ' + $filter( 'date' )( new Date(), "yyyy-MM-dd'T'HH:mm:ss.sssZ" ) );
+        }
+    }
+
+    angular.module( 'components' )
+
+    .controller( 'NavbarController', [ '$filter', NavbarController ] );
+} )();
+( function() {
+    'use strict';
+
     var projectsSection = {
             templateUrl : './projects-section.html',
             controller : 'ProjectsSectionController'
@@ -62185,29 +62212,109 @@ jQuery.easing["jswing"]=jQuery.easing["swing"];jQuery.extend(jQuery.easing,{def:
 ( function() {
     'use strict';
 
-    function ProjectsSectionController() {
+    function ProjectsSectionController( ProjectsSectionService ) {
         var vm = this;
 
         vm.$onInit = function() {
-            vm.projects = [ {
-                    title : "Sample Title One",
-                    blurb : "This is the sample blurb for the first book.",
-                    thumbnail : "http://placecorgi.com/250"
-            }, {
-                    title : "Sample Title Two",
-                    blurb : "This is the sample blurb for the second book.",
-                    thumbnail : "http://placecorgi.com/250"
-            }, {
-                    title : "Sample Title Three",
-                    blurb : "This is the sample blurb for the third book.",
-                    thumbnail : "http://placecorgi.com/250"
-            } ];
+            vm.projects = [ ProjectsSectionService.aroundAGreekTable,
+                    ProjectsSectionService.backpackerNationalParksCoastToCoast,
+                    ProjectsSectionService.barefootHome,
+                    ProjectsSectionService.bridalBible,
+                    ProjectsSectionService.campingActivityBookForFamilies,
+                    ProjectsSectionService.diyBride,
+                    ProjectsSectionService.familiesOnFoot,
+                    ProjectsSectionService.hotDog,
+                    ProjectsSectionService.kidsOutdoorAdventureBook,
+                    ProjectsSectionService.prairieGirl,
+                    ProjectsSectionService.spoonfulOfPromises,
+                    ProjectsSectionService.wineocology ];
         }
     }
 
     angular.module( 'components' )
 
-    .controller( 'ProjectsSectionController', [ ProjectsSectionController ] );
+    .controller( 'ProjectsSectionController', [ 'ProjectsSectionService', ProjectsSectionController ] );
+} )();
+( function() {
+    'use strict';
+
+    function ProjectsSectionService() {
+        this.aroundAGreekTable = {
+                title : "Around a Greek Table",
+                blurb : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                thumbnail : "resources/images/covers/around_a_greek_table.jpg"
+        };
+
+        this.backpackerNationalParksCoastToCoast = {
+                title : "Backpacker: The National Parks Coast to Coast",
+                blurb : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                thumbnail : "resources/images/covers/backpacker_national_parks_coast_to_coast_full.jpg"
+        };
+
+        this.barefootHome = {
+                title : "The Barefoot Home",
+                blurb : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                thumbnail : "resources/images/covers/barefoot_home.jpg"
+        };
+
+        this.bridalBible = {
+                title : "The Bridal Bible",
+                blurb : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                thumbnail : "resources/images/covers/bridal_bible.jpg"
+        };
+
+        this.campingActivityBookForFamilies = {
+                title : "Camping Activity Book for Families",
+                blurb : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                thumbnail : "resources/images/covers/camping_activity_book_for_families.jpg"
+        };
+
+        this.diyBride = {
+                title : "The DIY Bride",
+                blurb : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                thumbnail : "resources/images/covers/diy_bride.jpg"
+        };
+
+        this.familiesOnFoot = {
+                title : "Families on Foot",
+                blurb : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                thumbnail : "resources/images/covers/families_on_foot.jpg"
+        };
+
+        this.hotDog = {
+                title : "How the Hot Dog Found its Bun",
+                blurb : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                thumbnail : "resources/images/covers/hot_dog.jpg"
+        };
+
+        this.kidsOutdoorAdventureBook = {
+                title : "The Kids' Outdoor Adventure Book",
+                blurb : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                thumbnail : "resources/images/covers/kids_outdoor_adventure_book.jpg"
+        };
+
+        this.prairieGirl = {
+                title : "The Prairie Girl's Guide to Life",
+                blurb : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                thumbnail : "resources/images/covers/prairie_girl.jpg"
+        };
+
+        this.spoonfulOfPromises = {
+                title : "A Spoonful of Promises",
+                blurb : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                thumbnail : "resources/images/covers/spoonful_of_promises.jpg"
+        };
+
+        this.wineocology = {
+                title : "Wineocology",
+                blurb : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                thumbnail : "resources/images/covers/wineocology.jpg"
+        };
+    }
+
+    angular.module( 'components' )
+
+    .service( 'ProjectsSectionService', [ ProjectsSectionService ] );
 } )();
 ( function() {
     'use strict';
@@ -62261,36 +62368,9 @@ jQuery.easing["jswing"]=jQuery.easing["swing"];jQuery.extend(jQuery.easing,{def:
 
     .controller( 'SplashSectionController', [ SplashSectionController ] );
 } )();
-( function() {
-    'use strict';
-
-    var navbar = {
-            templateUrl : './navbar.html',
-            controller : 'NavbarController'
-    };
-
-    angular.module( 'components' )
-
-    .component( 'navbar', navbar );
-} )();
-( function() {
-    'use strict';
-
-    function NavbarController($filter) {
-        var vm = this;
-
-        vm.$onInit = function() {
-            console.log( 'welcome @ ' + $filter( 'date' )( new Date(), "yyyy-MM-dd'T'HH:mm:ss.sssZ" ) );
-        }
-    }
-
-    angular.module( 'components' )
-
-    .controller( 'NavbarController', [ '$filter', NavbarController ] );
-} )();
 (function(){angular.module('templates', []).run(['$templateCache', function($templateCache) {$templateCache.put('root.html','<navbar></navbar>\n\n<splash-section></splash-section>\n\n<about-section></about-section>\n\n<services-section></services-section>\n\n<projects-section></projects-section>\n\n<contact-section></contact-section>\n\n<footbar></footbar>');
 $templateCache.put('./about-section.html','<section\n  id="about"\n  class="bg-primary">\n\n  <div class="container">\n\n    <div class="row">\n\n      <div class="col-lg-8 col-lg-offset-2 text-center">\n\n        <h2 class="section-heading">About Me</h2>\n\n        <hr class="light" />\n\n        <p>I\u2019ve worked in the publishing industry for over a decade as a nonfiction book acquisitions editor. I have acquired and edited books across a variety of categories, including outdoor recreation, home improvement and design,\n          cookbooks, adventure narratives, and family-focused titles. I specialize in highly designed, instructional books. My edited works include two National Outdoor Book Award winners and a New York Times e-book bestseller.</p>\n\n        <a\n          href="#services"\n          class="page-scroll btn btn-tertiary btn-xl sr-button">Learn more</a>\n\n      </div>\n\n    </div>\n\n  </div>\n\n</section>');
-$templateCache.put('./book-card.html','<div class="col-lg-10 col-lg-offset-1">\n\n  <div class="row">\n\n    <div class="col-md-4">\n\n      <img ng-src="{{$ctrl.book.thumbnail}}" />\n\n    </div>\n\n    <div class="col-md-8">\n\n      <div class="panel panel-primary">\n\n        <div class="panel-heading">\n\n          <h3 class="panel-title">{{$ctrl.book.title}}</h3>\n\n        </div>\n\n        <div class="panel-body">{{$ctrl.book.blurb}}</div>\n\n      </div>\n\n    </div>\n\n  </div>\n\n  <hr class="sub-section" />\n\n</div>');
+$templateCache.put('./book-card.html','<div class="col-lg-10 col-lg-offset-1">\n\n  <div class="row">\n\n    <div class="col-md-4">\n\n      <img class="book-cover" ng-src="{{$ctrl.book.thumbnail}}" alt="{{$ctrl.book.title}}" />\n\n    </div>\n\n    <div class="col-md-8">\n\n      <div class="panel panel-primary">\n\n        <div class="panel-heading">\n\n          <h3 class="panel-title">{{$ctrl.book.title}}</h3>\n\n        </div>\n\n        <div class="panel-body">{{$ctrl.book.blurb}}</div>\n\n      </div>\n\n    </div>\n\n  </div>\n\n  <hr class="sub-section" />\n\n</div>');
 $templateCache.put('./contact-section.html','<section id="contact">\n\n  <div class="container">\n\n    <div class="row">\n\n      <div class="col-lg-8 col-lg-offset-2 text-center">\n\n        <h2 class="section-heading">Contact</h2>\n\n        <hr class="light" />\n\n        <a\n          href="mailto:katie@katiebenoit.com"\n          class="btn btn-primary btn-xl">Email me</a>\n\n        <hr style="border-color: white" />\n\n        <div class="well">\n          <p class="text-muted">To have an e-mail form like Stacy Tornio\'s, it will take a bit of time to set up. In the meantime, I\'m simply letting this button leverage the user\'s default e-mail application to pre-fill an e-mail ready\n            to send to you. This is how the link in the Services section behaves as well.</p>\n        </div>\n\n      </div>\n\n    </div>\n\n  </div>\n\n</section>');
 $templateCache.put('./footbar.html','<footer>\n  <p class="pull-right">\n    <a\n      class="page-scroll"\n      href="#page-top">Back to top</a>\n  </p>\n  <p>&copy; 2017 Katie Benoit LLC</p>\n</footer>');
 $templateCache.put('./navbar.html','<nav\n  id="main-nav"\n  class="navbar navbar-default navbar-fixed-top">\n\n  <div class="container-fluid">\n\n    <div class="navbar-header">\n\n      <button\n        type="button"\n        class="navbar-toggle collapsed"\n        data-toggle="collapse"\n        data-target="#kb-navbar-collapse">\n        <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>\n      </button>\n\n      <a\n        class="navbar-brand page-scroll"\n        href="#page-top">Katie Benoit</a>\n\n    </div>\n\n    <div\n      id="kb-navbar-collapse"\n      class="collapse navbar-collapse">\n\n      <ul class="nav navbar-nav navbar-right">\n\n        <li><a\n          class="page-scroll"\n          href="#about">About Me</a></li>\n\n        <li><a\n          class="page-scroll"\n          href="#services">Services</a></li>\n\n        <li><a\n          class="page-scroll"\n          href="#projects">My Sample Projects</a></li>\n\n        <li><a\n          class="page-scroll"\n          href="#contact">Contact</a></li>\n\n      </ul>\n\n    </div>\n\n  </div>\n\n</nav>');
