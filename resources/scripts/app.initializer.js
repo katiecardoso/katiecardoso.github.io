@@ -17,7 +17,7 @@
     } );
 
     // Closes the Responsive Menu on Menu Item Click
-    $( '.navbar-collapse ul li a' ).click( function() {
+    $( document ).on( 'click', '.navbar-collapse ul li a', function( event ) {
         $( '.navbar-toggle:visible' ).click();
     } );
 
