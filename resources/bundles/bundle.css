@@ -14346,15 +14346,15 @@ header {
       border-width: 3px;
       max-width: 200px;
       margin: 30px auto; }
-    header .header-content .header-content-inner h3 {
+    header .header-content .header-content-inner p {
       font-weight: 600;
       color: fade(#bc451f, 70%);
       font-size: 2em; }
     @media (min-width: 768px) {
-      header .header-content .header-content-inner h3 {
+      header .header-content .header-content-inner p {
         font-size: 2.5em; } }
     @media (max-width: 768px) {
-      header .header-content .header-content-inner h3 {
+      header .header-content .header-content-inner p {
         font-size: 1.5em; } }
   @media (min-width: 768px) {
     header {
@@ -14629,6 +14629,14 @@ body {
 
 /*$theme-secondary: #973b20;*/
 
+
+root .loader {
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  font-size: 24px;
+  text-align: center;
+  font-weight: 900; }
 
 @charset "UTF-8";
 /*$theme-secondary: #973b20;*/
@@ -20595,15 +20603,15 @@ header {
       border-width: 3px;
       max-width: 200px;
       margin: 30px auto; }
-    header .header-content .header-content-inner h3 {
+    header .header-content .header-content-inner p {
       font-weight: 600;
       color: fade(#bc451f, 70%);
       font-size: 2em; }
     @media (min-width: 768px) {
-      header .header-content .header-content-inner h3 {
+      header .header-content .header-content-inner p {
         font-size: 2.5em; } }
     @media (max-width: 768px) {
-      header .header-content .header-content-inner h3 {
+      header .header-content .header-content-inner p {
         font-size: 1.5em; } }
   @media (min-width: 768px) {
     header {
@@ -26848,15 +26856,15 @@ header {
       border-width: 3px;
       max-width: 200px;
       margin: 30px auto; }
-    header .header-content .header-content-inner h3 {
+    header .header-content .header-content-inner p {
       font-weight: 600;
       color: fade(#bc451f, 70%);
       font-size: 2em; }
     @media (min-width: 768px) {
-      header .header-content .header-content-inner h3 {
+      header .header-content .header-content-inner p {
         font-size: 2.5em; } }
     @media (max-width: 768px) {
-      header .header-content .header-content-inner h3 {
+      header .header-content .header-content-inner p {
         font-size: 1.5em; } }
   @media (min-width: 768px) {
     header {
@@ -33094,15 +33102,15 @@ header {
       border-width: 3px;
       max-width: 200px;
       margin: 30px auto; }
-    header .header-content .header-content-inner h3 {
+    header .header-content .header-content-inner p {
       font-weight: 600;
       color: fade(#bc451f, 70%);
       font-size: 2em; }
     @media (min-width: 768px) {
-      header .header-content .header-content-inner h3 {
+      header .header-content .header-content-inner p {
         font-size: 2.5em; } }
     @media (max-width: 768px) {
-      header .header-content .header-content-inner h3 {
+      header .header-content .header-content-inner p {
         font-size: 1.5em; } }
   @media (min-width: 768px) {
     header {
@@ -39340,15 +39348,15 @@ header {
       border-width: 3px;
       max-width: 200px;
       margin: 30px auto; }
-    header .header-content .header-content-inner h3 {
+    header .header-content .header-content-inner p {
       font-weight: 600;
       color: fade(#bc451f, 70%);
       font-size: 2em; }
     @media (min-width: 768px) {
-      header .header-content .header-content-inner h3 {
+      header .header-content .header-content-inner p {
         font-size: 2.5em; } }
     @media (max-width: 768px) {
-      header .header-content .header-content-inner h3 {
+      header .header-content .header-content-inner p {
         font-size: 1.5em; } }
   @media (min-width: 768px) {
     header {
@@ -39623,13 +39631,5 @@ body {
 
 #services li + li {
   margin-top: 6px; }
-
-root .loader {
-  position: absolute;
-  top: 40%;
-  left: 45%;
-  font-size: 24px;
-  text-align: center;
-  font-weight: 900; }
 
 /*# sourceMappingURL=../maps/bundle.css.map */

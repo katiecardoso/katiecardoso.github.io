@@ -177,18 +177,18 @@ header {
                 max-width: 200px;
                 margin: 30px auto;
             }
-            h3 {
+            p {
                 font-weight: 600;
                 color: fade($theme-secondary, 70%);
                 font-size: 2em;
             }
             @media (min-width: 768px) {
-                h3 {
+                p {
                     font-size: 2.5em;
                 }
             }
             @media (max-width: 768px) {
-                h3 {
+                p {
                     font-size: 1.5em;
                 }
             }
