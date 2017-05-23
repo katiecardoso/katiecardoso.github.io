@@ -62039,12 +62039,12 @@ jQuery.easing["jswing"]=jQuery.easing["swing"];jQuery.extend(jQuery.easing,{def:
 ( function() {
     'use strict';
 
-    angular.module( 'components', [  ] );
+    angular.module( 'core', [] );
 } )();
 ( function() {
     'use strict';
 
-    angular.module( 'core', [] );
+    angular.module( 'components', [  ] );
 } )();
 (function() {
 	'use strict';

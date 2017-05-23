@@ -157,7 +157,7 @@ header {
     background-image: url('../images/backgrounds/dock.jpg');
     background-position: center;
     text-align: center;
-    color: $theme-primary;
+    color: $theme-secondary;
     .header-content {
         position: relative;
         text-align: center;
@@ -177,10 +177,20 @@ header {
                 max-width: 200px;
                 margin: 30px auto;
             }
-            p {
+            h3 {
                 font-weight: 600;
-                color: fade($theme-primary, 70%);
-                font-size: 1.5em;
+                color: fade($theme-secondary, 70%);
+                font-size: 2em;
+            }
+            @media (min-width: 768px) {
+                h3 {
+                    font-size: 2.5em;
+                }
+            }
+            @media (max-width: 768px) {
+                h3 {
+                    font-size: 1.5em;
+                }
             }
         }
     }
