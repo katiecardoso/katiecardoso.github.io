@@ -14338,7 +14338,7 @@ header {
       text-transform: uppercase;
       margin-top: 0;
       margin-bottom: 0;
-      font-size: 48px; }
+      font-size: 3em; }
     header .header-content .header-content-inner hr {
       border-color: #646464;
       border-width: 3px;
@@ -14347,7 +14347,7 @@ header {
     header .header-content .header-content-inner p {
       font-weight: 600;
       color: fade(#74f458, 70%);
-      font-size: 24px; }
+      font-size: 1.5em; }
   @media (min-width: 768px) {
     header {
       min-height: 100%; }
@@ -20587,7 +20587,7 @@ header {
       text-transform: uppercase;
       margin-top: 0;
       margin-bottom: 0;
-      font-size: 48px; }
+      font-size: 3em; }
     header .header-content .header-content-inner hr {
       border-color: #646464;
       border-width: 3px;
@@ -20596,7 +20596,7 @@ header {
     header .header-content .header-content-inner p {
       font-weight: 600;
       color: fade(#74f458, 70%);
-      font-size: 24px; }
+      font-size: 1.5em; }
   @media (min-width: 768px) {
     header {
       min-height: 100%; }
@@ -26833,7 +26833,7 @@ header {
       text-transform: uppercase;
       margin-top: 0;
       margin-bottom: 0;
-      font-size: 48px; }
+      font-size: 3em; }
     header .header-content .header-content-inner hr {
       border-color: #646464;
       border-width: 3px;
@@ -26842,7 +26842,7 @@ header {
     header .header-content .header-content-inner p {
       font-weight: 600;
       color: fade(#74f458, 70%);
-      font-size: 24px; }
+      font-size: 1.5em; }
   @media (min-width: 768px) {
     header {
       min-height: 100%; }
@@ -33072,7 +33072,7 @@ header {
       text-transform: uppercase;
       margin-top: 0;
       margin-bottom: 0;
-      font-size: 48px; }
+      font-size: 3em; }
     header .header-content .header-content-inner hr {
       border-color: #646464;
       border-width: 3px;
@@ -33081,7 +33081,7 @@ header {
     header .header-content .header-content-inner p {
       font-weight: 600;
       color: fade(#74f458, 70%);
-      font-size: 24px; }
+      font-size: 1.5em; }
   @media (min-width: 768px) {
     header {
       min-height: 100%; }
@@ -39311,7 +39311,7 @@ header {
       text-transform: uppercase;
       margin-top: 0;
       margin-bottom: 0;
-      font-size: 48px; }
+      font-size: 3em; }
     header .header-content .header-content-inner hr {
       border-color: #646464;
       border-width: 3px;
@@ -39320,7 +39320,7 @@ header {
     header .header-content .header-content-inner p {
       font-weight: 600;
       color: fade(#74f458, 70%);
-      font-size: 24px; }
+      font-size: 1.5em; }
   @media (min-width: 768px) {
     header {
       min-height: 100%; }
