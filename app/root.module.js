@@ -1,7 +1,7 @@
 ( function() {
     'use strict';
 
-    angular.module( 'root', [ 'core', 'components', 'templates', 'ui.router', 'ui.bootstrap', 'angular-loading-bar' ] )
+    angular.module( 'root', [ 'core', 'components', 'templates', 'ui.router', 'ui.bootstrap', 'angular-loading-bar', 'ngSanitize' ] )
 
     .run( function( $trace ) {
         $trace.enable( "TRANSITION" );

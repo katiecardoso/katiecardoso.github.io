@@ -47,6 +47,7 @@ var js = {
                 bowerDir + '/angular-ui-router/release/angular-ui-router.js',
                 bowerDir + '/angular-bootstrap/ui-bootstrap-tpls.js',
                 bowerDir + '/angular-loading-bar/build/loading-bar.min.js',
+                bowerDir + '/angular-sanitize/angular-sanitize.min.js',
                 bowerDir + '/bootstrap/dist/js/bootstrap.js',
                 bowerDir + '/jquery.easing/js/jquery.easing.min.js',
                 bowerDir + '/scrollreveal/dist/scrollreveal.min.js',
