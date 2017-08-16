@@ -1,0 +1,41 @@
+.card-wrapper {
+  text-align: center;
+}
+
+.testimonial-card {
+  font-family: Georgia, serif;
+  width: 1000px;
+  margin: 4em auto;
+  padding: 0.8em 40px;
+  line-height: 1.62;
+  position: relative;
+  border: none;
+  text-align: left;
+}
+
+.testimonial-card:before {
+  display: block;
+  padding-left: 10px;
+  content: "\201C";
+  font-size: 80px;
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  color: #7a7a7a;
+}
+
+.testimonial-card-content {
+  color: #666666;
+  font-size: 18px;
+}
+
+.testimonial-card-cite {
+  color: #999999;
+  font-size: 14px;
+  display: block;
+  margin-top: 5px;
+}
+
+testimonial-card-cite:before {
+  content: "\2014 \2009";
+}

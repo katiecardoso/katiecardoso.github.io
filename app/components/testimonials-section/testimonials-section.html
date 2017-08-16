@@ -1,0 +1,37 @@
+<section id="testimonials">
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-lg-8 col-lg-offset-2 text-center">
+
+        <h2 class="section-heading">Testimonials</h2>
+
+        <hr class="light" />
+
+      </div>
+
+    </div>
+
+    <div class="row" ng-repeat="testimonial in $ctrl.testimonials">
+
+      <hr class="light" ng-hide="$first" />
+
+      <testimonial-card testimonial="testimonial"></testimonial-card>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-lg-8 col-lg-offset-2 text-center">
+
+        <a href="#contact" class="page-scroll btn btn-tertiary btn-xl sr-button">Contact</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
