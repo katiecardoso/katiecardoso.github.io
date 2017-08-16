@@ -62770,13 +62770,106 @@ jQuery.easing["jswing"]=jQuery.easing["swing"];jQuery.extend(jQuery.easing,{def:
 
     .controller( 'SplashSectionController', [ SplashSectionController ] );
 } )();
-(function(){angular.module('templates', []).run(['$templateCache', function($templateCache) {$templateCache.put('root.html','<navbar></navbar>\n\n<splash-section></splash-section>\n\n<about-section></about-section>\n\n<services-section></services-section>\n\n<projects-section></projects-section>\n\n<contact-section></contact-section>\n\n<footbar></footbar>');
-$templateCache.put('./about-section.html','<section\n  id="about"\n  class="bg-primary">\n\n  <div class="container">\n\n    <div class="row">\n\n      <div class="col-lg-8 col-lg-offset-2 text-center">\n\n        <h2 class="section-heading">About Me</h2>\n\n        <hr class="light" />\n\n        <p>I\u2019ve worked in the publishing industry for over a decade as a nonfiction book acquisitions editor. I have acquired and edited books across a variety of categories, including outdoor recreation, home improvement and design,\n          cookbooks, adventure narratives, and family-focused titles. I specialize in highly designed, instructional books. My edited works include two National Outdoor Book Award winners and a New York Times e-book bestseller.</p>\n\n        <a\n          href="#services"\n          class="page-scroll btn btn-tertiary btn-xl sr-button">Services</a>\n\n      </div>\n\n    </div>\n\n  </div>\n\n</section>');
+( function() {
+  'use strict';
+
+  var testimonialCard = {
+    templateUrl: './testimonial-card.html',
+    controller: 'TestimonialCardController',
+    bindings: {
+      testimonial: '<'
+    }
+  };
+
+  angular.module( 'components' )
+
+    .component( 'testimonialCard', testimonialCard );
+} )();
+
+( function() {
+  'use strict';
+
+  function TestimonialCardController( $filter ) {
+    var vm = this;
+
+    vm.$onInit = function() {}
+
+    vm.testimonialAuthor = function() {
+        return '  - ' + vm.testimonial.author;
+    }
+  }
+
+  angular.module( 'components' )
+
+    .controller( 'TestimonialCardController', [ '$filter', TestimonialCardController ] );
+} )();
+
+( function() {
+  'use strict';
+
+  var testimonialsSection = {
+    templateUrl: './testimonials-section.html',
+    controller: 'TestimonialsSectionController'
+  };
+
+  angular.module( 'components' )
+
+    .component( 'testimonialsSection', testimonialsSection );
+} )();
+
+( function() {
+  'use strict';
+
+  function TestimonialsSectionController( TestimonialsSectionService ) {
+    var vm = this;
+
+    vm.$onInit = function() {
+      vm.testimonials = [ TestimonialsSectionService.stacyTornio,
+        TestimonialsSectionService.marenHorjus,
+        TestimonialsSectionService.johnnyMolloy
+      ];
+    }
+  }
+
+  angular.module( 'components' )
+
+    .controller( 'TestimonialsSectionController', [ 'TestimonialsSectionService', TestimonialsSectionController ] );
+} )();
+
+( function() {
+  'use strict';
+
+  function TestimonialsSectionService() {
+    this.stacyTornio = {
+      author: "Stacy Tornio, author of <i>The Kids’ Outdoor Adventure Book</i>",
+      content: "I've worked with dozens of editors over the years, and Katie is one of my very favorites. She is smart, creative, and has a strong, clear vision for any project she's on. She's one of those people that I would work with on anything."
+    };
+
+    this.marenHorjus = {
+      author: "Maren Horjus, author of <i>Haunted Hikes</i>",
+      content: "Katie’s excitement over our project was truly infectious, allowing us to push the envelope of where fact and fiction can meet in storytelling. She shepherded it from concept to bookshelf, which freed me up to focus entirely on the stories and not get lost in the weeds. As an editor, Katie is the most attentive I’ve worked with, and I sincerely hope to create more radical content with her in the future."
+    };
+
+    this.johnnyMolloy = {
+      author: "Johnny Molloy, author of over 60 outdoor guides",
+      content: "I've had the opportunity to work with Katie on numerous book projects. She shepherded my guidebooks with a steady hand, getting things done correctly and on time. She brings a business approach to the table, always holding up her end of responsibility, yet can also have a little fun at the same time. Katie is a critical thinker, seeking and finding solutions to old problems or coming up with new projects and book ideas. In short, Katie is reliable, innovative, and a pleasant person to work with."
+    };
+  }
+
+  angular.module( 'components' )
+
+    .service( 'TestimonialsSectionService', [ TestimonialsSectionService ] );
+} )();
+
+(function(){angular.module('templates', []).run(['$templateCache', function($templateCache) {$templateCache.put('root.html','<navbar></navbar>\n\n<splash-section></splash-section>\n\n<about-section></about-section>\n\n<services-section></services-section>\n\n<projects-section></projects-section>\n\n<testimonials-section></testimonials-section>\n\n<contact-section></contact-section>\n\n<footbar></footbar>\n');
+$templateCache.put('./about-section.html','<section\n  id="about"\n  class="bg-primary">\n\n  <div class="container">\n\n    <div class="row">\n\n      <div class="col-lg-10 col-lg-offset-1">\n\n        <div class="row">\n\n          <div class="col-md-3">\n\n            <img\n              class="headshot img-circle"\n              src="resources/images/headshot.jpg"\n              alt="Katie Benoit Cardoso | Editor / Writer / Creative Consultant" />\n\n          </div>\n\n          <div class="col-md-9 text-center">\n\n            <h2 class="section-heading">About Me</h2>\n\n            <hr class="light" />\n\n            <p>I\u2019ve worked in the publishing industry for over a decade as a nonfiction book acquisitions editor. I have acquired and edited books across a variety of categories, including outdoor recreation, home improvement and design,\n              cookbooks, adventure narratives, and family-focused titles. I specialize in highly designed, instructional books. My edited works include two National Outdoor Book Award winners and a New York Times e-book bestseller.</p>\n\n            <a\n              href="#services"\n              class="page-scroll btn btn-tertiary btn-xl sr-button">Services</a>\n\n          </div>\n\n        </div>\n\n      </div>\n\n    </div>\n\n  </div>\n\n</section>\n');
 $templateCache.put('./book-card.html','<div class="col-lg-10 col-lg-offset-1">\n\n  <div class="row">\n\n    <div class="col-md-4">\n\n      <img\n        class="book-cover"\n        ng-class="{\'bordered-book-cover\': $ctrl.book.border}"\n        ng-src="{{$ctrl.book.thumbnail}}"\n        alt="{{$ctrl.book.title}}" />\n\n    </div>\n\n    <div class="col-md-8">\n\n      <div class="panel panel-primary">\n\n        <div class="panel-heading">\n\n          <h3 class="panel-title">{{$ctrl.book.title}}</h3>\n\n        </div>\n\n        <div class="panel-body" ng-bind-html="$ctrl.book.blurb"></div>\n\n      </div>\n\n    </div>\n\n  </div>\n\n  <hr class="sub-section" />\n\n</div>');
 $templateCache.put('./contact-section.html','<section id="contact">\n\n  <div class="container">\n\n    <div class="row">\n\n      <div class="col-lg-8 col-lg-offset-2 text-center">\n\n        <h2 class="section-heading">Contact</h2>\n\n        <hr class="light" />\n\n        <a\n          href="mailto:katie@katiebenoit.com"\n          class="btn btn-primary btn-xl">Email me</a>\n\n      </div>\n\n    </div>\n\n  </div>\n\n</section>');
 $templateCache.put('./footbar.html','<footer>\n  <p class="pull-right">\n    <a\n      class="page-scroll"\n      href="#page-top">Back to top</a>\n  </p>\n  <p>&copy; 2017 Katie Benoit LLC</p>\n</footer>');
-$templateCache.put('./navbar.html','<nav\n  id="main-nav"\n  class="navbar navbar-default navbar-fixed-top">\n\n  <div class="container-fluid">\n\n    <div class="navbar-header">\n\n      <button\n        type="button"\n        class="navbar-toggle collapsed"\n        data-toggle="collapse"\n        data-target="#kb-navbar-collapse">\n        <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>\n      </button>\n\n      <a\n        class="navbar-brand page-scroll"\n        href="#page-top">Katie Benoit</a>\n\n    </div>\n\n    <div\n      id="kb-navbar-collapse"\n      class="collapse navbar-collapse">\n\n      <ul class="nav navbar-nav navbar-right">\n\n        <li><a\n          class="page-scroll"\n          href="#about">About Me</a></li>\n\n        <li><a\n          class="page-scroll"\n          href="#services">Services</a></li>\n\n        <li><a\n          class="page-scroll"\n          href="#projects">My Sample Projects</a></li>\n\n        <li><a\n          class="page-scroll"\n          href="#contact">Contact</a></li>\n\n      </ul>\n\n    </div>\n\n  </div>\n\n</nav>');
-$templateCache.put('./projects-section.html','<section id="projects">\n\n  <div class="container">\n\n    <div class="row">\n\n      <div class="col-lg-8 col-lg-offset-2 text-center">\n\n        <h2 class="section-heading">My Sample Projects</h2>\n\n        <hr class="light" />\n\n      </div>\n\n    </div>\n\n    <div\n      class="row"\n      ng-repeat="project in $ctrl.projects">\n\n      <book-card book="project"></book-card>\n\n    </div>\n\n    <div class="row">\n\n      <div class="col-lg-8 col-lg-offset-2 text-center">\n\n        <a\n          href="#contact"\n          class="page-scroll btn btn-tertiary btn-xl sr-button">Contact</a>\n\n      </div>\n\n    </div>\n\n  </div>\n\n</section>');
+$templateCache.put('./navbar.html','<nav\n  id="main-nav"\n  class="navbar navbar-default navbar-fixed-top">\n\n  <div class="container-fluid">\n\n    <div class="navbar-header">\n\n      <button\n        type="button"\n        class="navbar-toggle collapsed"\n        data-toggle="collapse"\n        data-target="#kb-navbar-collapse">\n        <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>\n      </button>\n\n      <a\n        class="navbar-brand page-scroll"\n        href="#page-top">Katie Benoit</a>\n\n    </div>\n\n    <div\n      id="kb-navbar-collapse"\n      class="collapse navbar-collapse">\n\n      <ul class="nav navbar-nav navbar-right">\n\n        <li><a\n          class="page-scroll"\n          href="#about">About Me</a></li>\n\n        <li><a\n          class="page-scroll"\n          href="#services">Services</a></li>\n\n        <li><a\n          class="page-scroll"\n          href="#projects">My Sample Projects</a></li>\n\n        <li><a\n          class="page-scroll"\n          href="#testimonials">Testimonials</a></li>\n\n        <li><a\n          class="page-scroll"\n          href="#contact">Contact</a></li>\n\n      </ul>\n\n    </div>\n\n  </div>\n\n</nav>\n');
+$templateCache.put('./projects-section.html','<section id="projects">\n\n  <div class="container">\n\n    <div class="row">\n\n      <div class="col-lg-8 col-lg-offset-2 text-center">\n\n        <h2 class="section-heading">My Sample Projects</h2>\n\n        <hr class="light" />\n\n      </div>\n\n    </div>\n\n    <div\n      class="row"\n      ng-repeat="project in $ctrl.projects">\n\n      <book-card book="project"></book-card>\n\n    </div>\n\n    <div class="row">\n\n      <div class="col-lg-8 col-lg-offset-2 text-center">\n\n        <a\n          href="#testimonials"\n          class="page-scroll btn btn-tertiary btn-xl sr-button">Testimonials</a>\n\n      </div>\n\n    </div>\n\n  </div>\n\n</section>\n');
 $templateCache.put('./services-section.html','<section id="services">\n\n  <div class="container">\n\n    <div class="row">\n\n      <div class="col-lg-8 col-lg-offset-2 text-center">\n\n        <h2 class="section-heading">Services</h2>\n\n        <hr class="light" />\n\n        <p>I believe the writing and editing process should be fun, yet meaningful. Your work is your passion and expertise, and I want to help you produce the best finished product possible. I\u2019m here to help guide you along through the\n          process of creating, whether it\u2019s brainstorming a concept with you, or to put the finishing touches on the project.</p>\n\n        <hr class="sub-section" />\n\n      </div>\n\n    </div>\n\n    <div class="row">\n\n      <div class="col-lg-8 col-lg-offset-2">\n\n        <p>The services I offer include:</p>\n\n        <ul>\n          <li>Copyediting/proofreading</li>\n          <li>Creative brainstorming/content creation</li>\n          <li>Developmental editing</li>\n          <li>Line editing</li>\n          <li>Project management</li>\n          <li>Proposal writing/editing</li>\n        </ul>\n\n        <hr class="sub-section" />\n\n      </div>\n\n    </div>\n\n    <div class="row">\n\n      <div class="col-lg-8 col-lg-offset-2 text-center">\n\n        <p>\n          For a no-cost consultation about your needs and project goals, or to receive a quote, contact me at <a href="mailto:katie@katiebenoit.com">katie@katiebenoit.com</a>.\n        </p>\n\n        <a\n          href="#projects"\n          class="page-scroll btn btn-tertiary btn-xl sr-button">My Sample Projects</a>\n\n      </div>\n\n    </div>\n\n  </div>\n\n</section>');
-$templateCache.put('./splash-section.html','<header>\n\n  <div class="header-content">\n\n    <div class="header-content-inner">\n\n      <h1>\n        Katie Benoit\n      </h1>\n      \n      <p>Editor | Writer | Creative Consultant</p>\n      \n      <hr/>\n\n      <a\n        href="#about"\n        class="btn btn-secondary btn-xl page-scroll">About Me</a>\n\n    </div>\n\n  </div>\n\n</header>');}]);})();
+$templateCache.put('./splash-section.html','<header>\n\n  <div class="header-content">\n\n    <div class="header-content-inner">\n\n      <h1>\n        Katie Benoit\n      </h1>\n      \n      <p>Editor | Writer | Creative Consultant</p>\n      \n      <hr/>\n\n      <a\n        href="#about"\n        class="btn btn-secondary btn-xl page-scroll">About Me</a>\n\n    </div>\n\n  </div>\n\n</header>');
+$templateCache.put('./testimonial-card.html','<div class="card-wrapper">\n  <blockquote class="testimonial-card">\n    <p class="testimonial-card-content" ng-bind-html="$ctrl.testimonial.content" />\n    <p class="testimonial-card-cite" ng-bind-html="$ctrl.testimonialAuthor()" />\n  </blockquote>\n</div>\n');
+$templateCache.put('./testimonials-section.html','<section id="testimonials">\n\n  <div class="container">\n\n    <div class="row">\n\n      <div class="col-lg-8 col-lg-offset-2 text-center">\n\n        <h2 class="section-heading">Testimonials</h2>\n\n        <hr class="light" />\n\n      </div>\n\n    </div>\n\n    <div class="row" ng-repeat="testimonial in $ctrl.testimonials">\n\n      <hr class="light" ng-hide="$first" />\n\n      <testimonial-card testimonial="testimonial"></testimonial-card>\n\n    </div>\n\n    <div class="row">\n\n      <div class="col-lg-8 col-lg-offset-2 text-center">\n\n        <a href="#contact" class="page-scroll btn btn-tertiary btn-xl sr-button">Contact</a>\n\n      </div>\n\n    </div>\n\n  </div>\n\n</section>\n');}]);})();
 //# sourceMappingURL=../maps/bundle.js.map
